@@ -1,7 +1,7 @@
 import logging
-from clickhouse_driver import connect
-conn = connect('clickhouse://10.0.0.30')
-client = conn.cursor()
+from clickhouse_driver import Client
+
+client = Client('10.0.0.30')
 
 
 def create_db(database):
@@ -43,8 +43,8 @@ class ClickhouseClient:
         
 
     def insertData(self,database,tableName,listOfDict):
-        query = 'INSERT INTO {}.{} (date_time,user_id,user_name,text_id,text,score,magnitude) VALUES'.format(database,tableName)
-        client.execute(query,listOfDict.get)
+        query = 'INSERT INTO {}.{} (date_time,user_name,text_id,text,score,magnitude) VALUES'.format(database,tableName)
+        client.execute(query,listOfDict)
      
 
     def selectData(self,database,tableName):
@@ -88,19 +88,19 @@ class ClickhouseClient:
 # db = DB('red')
 # drop = drop_db('rat')
 
-obj = ClickhouseClient("nlp_database")
-# listOfDictionari=dict[date_time: '2020-03-18+0000' ,user_id:'102636517979742',user_name:'Cat fish', text_id:'102637387979655_125871205656273',text:'Extant catfish'] 
-# obj.createTable("twitter","facebook")
-# obj.insertData('twitter','facebook',listOfDictionari)
+# obj = ClickhouseClient("nlp_database")
+# # li=dict[date_time: '2020-03-18+0000' ,user_id:'102636517979742',user_name:'Cat fish', text_id:'102637387979655_125871205656273',text:'Extant catfish'] 
+# obj.createTable("nlp_database","facebook")
+# # obj.insertData('twitter','facebook',listOfDictionari)
+# liste =[("102637387979655","Cat fish","102637387979655_125871205656273","Extant catfish",0.008,0.099)]
 
-''''
-# obj.insertData("nlp_database","facebook","2020-03-18T09:34:55+0000", "102636517979742","Cat fish","102637387979655_125871205656273","Extant catfish species live inland or in coastal waters of every continent except Antarctica. Catfish ")
+# obj.insertData("nlp_database","facebook",liste)
 
 
 
 
 # obj.updateColumn("facebook","F_102699651071355_105714230769897_20190501_2019123","classifiaction",)
  
-'''
+
 
 print(__name__)   

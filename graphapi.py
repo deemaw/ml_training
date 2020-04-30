@@ -36,6 +36,7 @@ class GraphAPI:
         result = requests.get(url).json()
         return result['data']
 
+print(__name__)
 # obj = GraphAPI('EAAC3hQgXvR4BAPPFaDKuZBJxSnj9KjpJzXCN35jmkpmwZCxKd1W9bqFfU73ZCFc8OVMhn36Gtuu6egAuFDgLSRVIyhF8iaqRJepeLC1X3DkBq5DaXOip6DhyrdL2ieZAZAXAi98w0RSXSWdmuAWo0jmIOdOW27eWpd4sPyDhQSrMdWU2uqRRRpwy4c8TiGXqLEfO4iO0ma89FGvue6Qo8tkipQvpZBNxQEtwHNKXPMFSzhLTmyb0Uh')
 
 # print(obj.getPageID())

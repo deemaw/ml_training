@@ -3,6 +3,8 @@ from google.cloud import language
 from google.cloud.language import enums
 from google.cloud.language import types
 
+text = 'boom'
+
 def gcp_nlp(text):
     logging.info("gcpNLP function")
     logging.info(text)
@@ -21,3 +23,4 @@ def gcp_nlp(text):
     return sentiment
 
 
+print(__name__)
