@@ -7,8 +7,7 @@ from graphapi import GraphAPI
 
 
 def addSentimentProperties(listOfTuples):
-    logging.info("Add sentiment properties function")
-    # Add sentiment score and sentiment magnitude into the tuples
+    
 
     output = []                                             # Output list
     for i in listOfTuples:
@@ -23,13 +22,14 @@ def addSentimentProperties(listOfTuples):
 
 
 def getTimeStampFromDate(date):
-    logging.info("Get time stamp from data function")
-    timeStamp = date + "T00:00:00+0530"
-    return timeStamp
+    # l"Get time stamp from data function"
+    time_stamp = date + "T00:00:00+0530"
+    return time_stamp
+
 
 def checkTimeIsInRange(startingTime,endingTime,time):  
-    logging.info("Check time is in range function") 
-    # Time range creation
+    # Check time is in range function 
+    # Tcreate time range
     timeRange = DateTimeRange(startingTime,endingTime)
 
     result = time in timeRange
