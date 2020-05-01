@@ -3,7 +3,8 @@
 def get_postid(url):
 
     # Get the id of fb post
-    startingindex = findSubstringIndex(url, "Cat-fish-") + len("Cat-fish-") 
+    # startingindex = findSubstringIndex(url, "Cat-fish-") + len("Cat-fish-") +1
+    startingindex = findSubstringIndex(url, "Cat-fish-") + len("Cat-fish-")
     endingindex = findSubstringIndex(url, "/?__tn__=")
     return url[startingindex:endingindex]
         

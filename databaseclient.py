@@ -76,9 +76,9 @@ class ClickhouseClient:
 
     def updateColumn(self,database,tableName,updateColumnName,updateColumnValue,fWhereColumnName,fWhereColumnValue,sWhereColumnName,sWhereColumnValue):
         
-    #     # Update column value
-        query = "ALTER TABLE {}.{} UPDATE {}={} WHERE {}={} AND {}={};".format(database,tableName,updateColumnName,updateColumnValue,fWhereColumnName,fWhereColumnValue)
-        return client.execute(query)
+    
+        query = "ALTER TABLE {}.{} UPDATE {}={} WHERE {}={} AND {}={};".format(database,tableName,updateColumnName,updateColumnValue,fWhereColumnName,fWhereColumnValue,sWhereColumnName,sWhereColumnValue)
+        client.execute(query)
 
     def selectColumn(self,database,tableName,columnName):
         logging.info("Select column function")

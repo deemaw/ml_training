@@ -4,14 +4,10 @@ from classifysentiment import classify_sentiment_value
 from datetimerange import DateTimeRange
 from graphapi import GraphAPI
 from getpostid import get_postid
-from listdict import add_sentiment
+from listdict import add_sentiment,getListOfDict
 from storeindatabase import checkTimeIsInRange,getTimeStampFromDate
 
-start_date = "2020-02-20"
-end_date = "2020-04-29"
-graphy= GraphAPI(access_token=)
-u = 'https://www.facebook.com/deemamiyu/posts/3001680149878521?comment_id=3003156719730864&notif_id=1588239159582467&notif_t=feed_comment&ref=notif'
-table = 'facebook'
+
 def storeClickhouse(graphapi_obj,database,url,tableName,startingDate,endingDate):
     logging.info("Store Clickhouse function")
     # Retrieve page comments and store them in Clickhouse
@@ -48,10 +44,10 @@ def storeClickhouse(graphapi_obj,database,url,tableName,startingDate,endingDate)
     sentimentAddedList = add_sentiment(listOfTuples)
 
     # Convert list of tuples into the list of dictionaries
-    listOfDict = dict(['date_time','user_id','user_name','text_id','text','score','magnitude'],sentimentAddedList)
+    listOfDict = getListOfDict(['date_time','user_id','user_name','text_id','text','score','magnitude'],sentimentAddedList)
 
     # Data insertion into the Clickhouse table
-    db_obj.insertData("facebook",tableName,listOfDict)
+    db_obj.insertData('nlp_database',tableName,listOfDict)
 
     # Add sentiment value classification column and update values
-    classify_sentiment_value("facebook",tableName)
+    classify_sentiment_value('nlp_database',tableName)

@@ -31,6 +31,4 @@ def checkTimeIsInRange(startingTime,endingTime,time):
 
     return result
 
-
-     
 print(__name__)  
