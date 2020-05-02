@@ -36,15 +36,5 @@ class GraphAPI:
         result = requests.get(url).json()
         return result['data']
 
-print(__name__)
 
-token=''
-pageid = '102636517979742'
-postid ='102636517979742_102637431312984'
-# obj = GraphAPI()
-
-# print(obj.getPageID())
-# print(obj.getPageName())
-# print(obj.getPagePostsList("102636517979742"))
-# print(obj.getPostCommentsList(postid))
 

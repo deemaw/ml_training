@@ -33,7 +33,6 @@ def classify_sentiment_value(db_name,table_name):
             
         db_object.updateColumn(db_name,table_name,"classification",nn_output,"score",score[i][0],"magnitude",magnitude[i][0])
 
-print(__name__)   
 
 
 
