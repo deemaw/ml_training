@@ -12,7 +12,7 @@ def createTableName(apiobj,url,start_date,end_date):
     newStartingDate = ''.join((start_date.split('-')))
     newEndingDate = ''.join((end_date.split('-')))
 
-    tableName = "F_" + postID + "_" + newStartingDate + '_' + newEndingDate
+    tableName = "Face_" + postID + "_" + newStartingDate + '_' + newEndingDate
 
     return tableName
 

@@ -43,7 +43,7 @@ class ClickhouseClient:
         
 
     def insertData(self,database,tableName,listOfDict):
-        query = 'INSERT INTO {}.{} (date_time,user_name,text_id,text,score,magnitude) VALUES'.format(database,tableName)
+        query = 'INSERT INTO {}.{} (date_time,user_id,user_name,text_id,text,score,magnitude) VALUES'.format(database,tableName)
         client.execute(query,listOfDict)
      
 
