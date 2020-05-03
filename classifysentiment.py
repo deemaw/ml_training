@@ -27,11 +27,9 @@ def classify_sentiment_value(db_name,table_name):
         elif (0.8<=nn_output<=1):
             nn_output = 1
         else:
-            nn_output = 0.5
-
-        # Update the table records
+            nn_output = 0.input_array # Update the table records
             
-        db_object.updateColumn(db_name,table_name,"classification",nn_output,"score",score[i][0],"magnitude",magnitude[i][0])
+        db_object.updateColumn(db_nameinput_arraye,"classification",nn_output,"score",score[i][0],"magnitude",magnitude[i][0])
 
 
 
